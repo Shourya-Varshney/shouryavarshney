@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Shourya Varshney | Portfolio</title>
 
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
-  <meta name="description" content="Shourya Varshney — portfolio." />
+  <link rel="stylesheet" href="styles.css" />
+  <meta name="description" content="Shourya Varshney — personal portfolio." />
 </head>
 <body>
 
@@ -15,7 +15,7 @@
   <div class="nav-container">
     <div class="logo">Shourya Varshney</div>
 
-    <nav id="navMenu" class="nav" aria-label="Main navigation">
+    <nav id="navMenu" class="nav">
       <a class="nav-link" href="#home">Home</a>
       <a class="nav-link" href="#about">About</a>
       <a class="nav-link" href="#skills">Skills</a>
@@ -24,8 +24,8 @@
     </nav>
 
     <div class="nav-actions">
-      <button id="themeBtn" class="control-btn" aria-pressed="false">Light</button>
-      <button id="hamburger" class="hamburger" aria-label="Open menu" aria-expanded="false">
+      <button id="themeBtn" class="theme-toggle" aria-pressed="false">🌙</button>
+      <button id="hamburger" class="hamburger" aria-label="Menu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
     </div>
@@ -35,26 +35,17 @@
 <main>
   <!-- HERO -->
   <section id="home" class="hero">
-    <div class="hero-left">
-      <h1 id="typewriter" class="typewriter" aria-live="polite"></h1>
-      <p class="hero-sub">A modern personal space to showcase work, skills and ideas.</p>
+    <h1 id="typewriter" class="typewriter"></h1>
+    <p class="hero-sub">A modern personal space to showcase work, skills, and ideas.</p>
 
-      <div class="hero-actions">
-        <button class="btn glass" id="viewResume">View Resume</button>
-        <a class="btn glass" href="mailto:official.shourya.varshney@gmail.com">Get in touch</a>
-      </div>
-    </div>
-
-    <div class="hero-right showcase">
-      <div class="showcase-card glass">
-        <h3>Showcase</h3>
-        <p>Placeholder for a project / featured work. Replace content later.</p>
-      </div>
+    <div class="hero-actions">
+      <button class="btn glass" id="viewResume">View Resume</button>
+      <a class="btn glass" href="mailto:official.shourya.varshney@gmail.com">Get in touch</a>
     </div>
   </section>
 
   <!-- ABOUT -->
-  <section id="about" class="about">
+  <section id="about" class="section">
     <h2>About Me</h2>
     <p>
       A commerce student with a passion for innovation and cutting-edge technology.
@@ -66,72 +57,51 @@
   </section>
 
   <!-- SKILLS -->
-  <section id="skills" class="skills">
+  <section id="skills" class="section">
     <h2>Skills</h2>
-    <div class="card-grid" id="skillsGrid">
+    <div class="card-grid">
       <button class="card glass action-rick">Problem Solving</button>
       <button class="card glass action-rick">Critical Thinking</button>
-      <a class="card glass link-card" href="https://www.chess.com/member/grandmaster_faustus" target="_blank" rel="noopener">Chess.com</a>
+      <a class="card glass" href="https://www.chess.com/member/grandmaster_faustus" target="_blank">Chess.com</a>
     </div>
   </section>
 
   <!-- PROJECTS -->
-  <section id="projects" class="projects">
+  <section id="projects" class="section">
     <h2>Projects</h2>
-    <div class="card-grid" id="projectsGrid">
-      <a class="card glass link-card" href="https://shouryavarshney.vercel.app/" target="_blank" rel="noopener">Portfolio</a>
+    <div class="card-grid">
+      <a class="card glass" href="https://shouryavarshney.vercel.app/" target="_blank">Portfolio</a>
     </div>
   </section>
 
-  <!-- BENTO CLOCKS (below projects, above contact) -->
-  <section id="clocks" class="bento">
-    <div class="bento-grid" id="bentoGrid">
+  <!-- CLOCKS -->
+  <section class="section">
+    <div class="bento-grid">
       <div class="bento-card glass">
         <div class="bento-title">India</div>
-        <div class="clock" id="clock-india">--:--:--</div>
-        <div class="tz">Asia/Kolkata</div>
+        <div class="clock" id="clock-india"></div>
       </div>
       <div class="bento-card glass">
         <div class="bento-title">USA</div>
-        <div class="clock" id="clock-usa">--:--:--</div>
-        <div class="tz">America/New_York</div>
+        <div class="clock" id="clock-usa"></div>
       </div>
       <div class="bento-card glass">
         <div class="bento-title">Europe</div>
-        <div class="clock" id="clock-europe">--:--:--</div>
-        <div class="tz">Europe/London</div>
+        <div class="clock" id="clock-europe"></div>
       </div>
     </div>
   </section>
 
   <!-- CONTACT -->
-  <section id="contact" class="contact">
+  <section id="contact" class="section">
     <h2>Contact Me</h2>
     <a class="mail-link" href="mailto:official.shourya.varshney@gmail.com">official.shourya.varshney@gmail.com</a>
   </section>
 </main>
 
 <footer class="site-footer">
-  <p>Made with love in India 💖</p>
+  <p id="footerEaster">Made with love in India 💖🕯️</p>
 </footer>
-
-<!-- Candle (fixed) -->
-<div class="candle-wrapper" id="candle" role="button" aria-label="Candle Easter egg">
-  <!-- SVG candle for better visuals -->
-  <svg class="candle-svg" width="64" height="120" viewBox="0 0 64 120" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-    <!-- candle body -->
-    <rect x="18" y="36" rx="6" ry="6" width="28" height="72" fill="#fffaf0" />
-    <!-- wax drip -->
-    <path d="M22 36c4 6 10 6 14 0v-6c-4 4-10 4-14 0v6z" fill="#fff3e6" />
-    <!-- wick -->
-    <rect x="30.5" y="26" width="3" height="10" rx="1" fill="#222" />
-    <!-- flame group -->
-    <g class="flame" transform="translate(32,18)">
-      <path class="flame-outer" d="M0 -14 C6 -12 8 -6 0 6 C-8 -6 -6 -12 0 -14 Z" fill="#ffdd7a"/>
-      <path class="flame-inner" d="M0 -10 C3 -8 4 -5 0 4 C-4 -5 -3 -8 0 -10 Z" fill="#ff8c3a"/>
-    </g>
-  </svg>
-</div>
 
 <script src="script.js"></script>
 </body>
