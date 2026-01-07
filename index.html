@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Personal Portfolio</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- External CSS -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="nav-container">
+      <div class="logo">YourName</div>
+      <nav>
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Skills</a>
+        <a href="#">Projects</a>
+        <a href="#">Contact</a>
+        <span class="theme-toggle" onclick="toggleTheme()">Toggle Theme</span>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-text">
+      <h1>Hi, I'm <span>Your Name</span></h1>
+      <p>
+        This is a modern personal website template designed to showcase your
+        resume, skills, and projects. It uses an AMOLED-black dark mode by
+        default, subtle animations, and gradient-driven interactions.
+      </p>
+      <div class="hero-actions">
+        <a href="#" class="btn">View Resume</a>
+        <a href="#" class="btn">My Work</a>
+      </div>
+    </div>
+
+    <div class="profile-card">
+      <h3>Profile Snapshot</h3>
+      <p>
+        Use this card to highlight a short professional summary, achievements,
+        or any key information you want visitors to notice instantly.
+      </p>
+    </div>
+  </section>
+
+  <!-- SCRIPT -->
+  <script>
+    function toggleTheme() {
+      document.body.classList.toggle('light');
+    }
+  </script>
+
+</body>
+</html>
