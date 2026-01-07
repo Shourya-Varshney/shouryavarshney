@@ -1,15 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Shourya Varshney | Portfolio</title>
 
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css" />
-
-  <!-- Basic SEO -->
-  <meta name="description" content="Shourya Varshney — portfolio. Commerce student exploring technology, design, and ideas." />
+  <link rel="stylesheet" href="styles.css">
+  <meta name="description" content="Shourya Varshney — portfolio." />
 </head>
 <body>
 
@@ -17,17 +15,17 @@
   <div class="nav-container">
     <div class="logo">Shourya Varshney</div>
 
-    <nav id="navMenu" class="nav">
-      <a href="#home">Home</a>
-      <a href="#about">About</a>
-      <a href="#skills">Skills</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
+    <nav id="navMenu" class="nav" aria-label="Main navigation">
+      <a class="nav-link" href="#home">Home</a>
+      <a class="nav-link" href="#about">About</a>
+      <a class="nav-link" href="#skills">Skills</a>
+      <a class="nav-link" href="#projects">Projects</a>
+      <a class="nav-link" href="#contact">Contact</a>
     </nav>
 
     <div class="nav-actions">
-      <button id="themeBtn" class="control-btn">Light</button>
-      <button id="hamburger" class="hamburger" aria-label="Menu">
+      <button id="themeBtn" class="control-btn" aria-pressed="false">Light</button>
+      <button id="hamburger" class="hamburger" aria-label="Open menu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
     </div>
@@ -37,24 +35,21 @@
 <main>
   <!-- HERO -->
   <section id="home" class="hero">
-    <div class="hero-text">
-      <h1 id="typewriter" class="typewriter"></h1>
-      <p class="hero-sub">A modern personal space to showcase work, skills, and ideas.</p>
+    <div class="hero-left">
+      <h1 id="typewriter" class="typewriter" aria-live="polite"></h1>
+      <p class="hero-sub">A modern personal space to showcase work, skills and ideas.</p>
 
       <div class="hero-actions">
-        <button class="btn">View Resume</button>
-        <a class="btn" href="mailto:official.shourya.varshney@gmail.com">Get in touch</a>
+        <button class="btn glass" id="viewResume">View Resume</button>
+        <a class="btn glass" href="mailto:official.shourya.varshney@gmail.com">Get in touch</a>
       </div>
     </div>
 
-    <!-- Stylized desk placeholder -->
-    <div class="desk">
-      <div class="monitor">
-        <div class="screen">Chess Game Animation (Concept)</div>
+    <div class="hero-right showcase">
+      <div class="showcase-card glass">
+        <h3>Showcase</h3>
+        <p>Placeholder for a project / featured work. Replace content later.</p>
       </div>
-      <div class="steam"></div>
-      <div class="steam s2"></div>
-      <div class="steam s3"></div>
     </div>
   </section>
 
@@ -73,18 +68,39 @@
   <!-- SKILLS -->
   <section id="skills" class="skills">
     <h2>Skills</h2>
-    <div class="card-grid">
-      <div class="card">Problem Solving</div>
-      <div class="card">Critical Thinking</div>
-      <a class="card link-card" href="https://www.chess.com/member/grandmaster_faustus" target="_blank">Chess.com</a>
+    <div class="card-grid" id="skillsGrid">
+      <button class="card glass action-rick">Problem Solving</button>
+      <button class="card glass action-rick">Critical Thinking</button>
+      <a class="card glass link-card" href="https://www.chess.com/member/grandmaster_faustus" target="_blank" rel="noopener">Chess.com</a>
     </div>
   </section>
 
   <!-- PROJECTS -->
   <section id="projects" class="projects">
     <h2>Projects</h2>
-    <div class="card-grid">
-      <a class="card link-card" href="https://shouryavarshney.vercel.app/" target="_blank">Portfolio</a>
+    <div class="card-grid" id="projectsGrid">
+      <a class="card glass link-card" href="https://shouryavarshney.vercel.app/" target="_blank" rel="noopener">Portfolio</a>
+    </div>
+  </section>
+
+  <!-- BENTO CLOCKS (below projects, above contact) -->
+  <section id="clocks" class="bento">
+    <div class="bento-grid" id="bentoGrid">
+      <div class="bento-card glass">
+        <div class="bento-title">India</div>
+        <div class="clock" id="clock-india">--:--:--</div>
+        <div class="tz">Asia/Kolkata</div>
+      </div>
+      <div class="bento-card glass">
+        <div class="bento-title">USA</div>
+        <div class="clock" id="clock-usa">--:--:--</div>
+        <div class="tz">America/New_York</div>
+      </div>
+      <div class="bento-card glass">
+        <div class="bento-title">Europe</div>
+        <div class="clock" id="clock-europe">--:--:--</div>
+        <div class="tz">Europe/London</div>
+      </div>
     </div>
   </section>
 
@@ -99,9 +115,22 @@
   <p>Made with love in India 💖</p>
 </footer>
 
-<!-- Candle -->
-<div class="candle" onclick="openCandlePage()">
-  <div class="flame"></div>
+<!-- Candle (fixed) -->
+<div class="candle-wrapper" id="candle" role="button" aria-label="Candle Easter egg">
+  <!-- SVG candle for better visuals -->
+  <svg class="candle-svg" width="64" height="120" viewBox="0 0 64 120" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <!-- candle body -->
+    <rect x="18" y="36" rx="6" ry="6" width="28" height="72" fill="#fffaf0" />
+    <!-- wax drip -->
+    <path d="M22 36c4 6 10 6 14 0v-6c-4 4-10 4-14 0v6z" fill="#fff3e6" />
+    <!-- wick -->
+    <rect x="30.5" y="26" width="3" height="10" rx="1" fill="#222" />
+    <!-- flame group -->
+    <g class="flame" transform="translate(32,18)">
+      <path class="flame-outer" d="M0 -14 C6 -12 8 -6 0 6 C-8 -6 -6 -12 0 -14 Z" fill="#ffdd7a"/>
+      <path class="flame-inner" d="M0 -10 C3 -8 4 -5 0 4 C-4 -5 -3 -8 0 -10 Z" fill="#ff8c3a"/>
+    </g>
+  </svg>
 </div>
 
 <script src="script.js"></script>
