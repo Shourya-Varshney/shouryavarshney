@@ -1,193 +1,176 @@
-:root {
-  --bg-dark: #000;
+/* =========================
+   Variables & basics
+   ========================= */
+:root{
+  --bg-amoled: #000000;
   --bg-light: #f5f6fa;
-  --text-dark: #eaeaea;
-  --text-light: #121212;
-  --card-dark: #0d0d0d;
-  --card-light: #ffffff;
-
+  --text-light: #ffffff;
+  --text-dark: #121212;
+  --card-dark: rgba(255,255,255,0.03);
+  --glass: rgba(255,255,255,0.04);
   --accent-gradient: linear-gradient(135deg, #ff4ecd, #6a00ff);
-  --accent-glow: 0 0 25px rgba(255, 78, 205, 0.35);
-
-  --radius: 18px;
-  --pill: 999px;
-  --transition: 0.3s ease;
+  --accent-glow: 0 8px 36px rgba(106,0,255,0.12);
+  --radius: 16px;
+  --transition: 280ms cubic-bezier(.2,.9,.2,1);
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: "Inter", sans-serif;
-  background: var(--bg-dark);
-  color: var(--text-dark);
-  transition: background var(--transition), color var(--transition);
-}
-
-body.light {
-  background: var(--bg-light);
+*{box-sizing: border-box; margin:0; padding:0}
+html{font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; -webkit-font-smoothing:antialiased}
+body{
+  background: var(--bg-amoled);
   color: var(--text-light);
+  min-height:100vh;
+  transition: background var(--transition), color var(--transition);
+  -webkit-font-smoothing:antialiased;
 }
 
-/* HEADER */
-header {
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  backdrop-filter: blur(14px);
-  background: rgba(0, 0, 0, 0.7);
+/* Light mode */
+body.light{
+  background: var(--bg-light);
+  color: var(--text-dark);
 }
 
-body.light header {
-  background: rgba(255, 255, 255, 0.7);
+/* =====================
+   Header / Nav
+   ===================== */
+.site-header{
+  position:sticky; top:0; z-index:999;
+  backdrop-filter: blur(10px);
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border-bottom: 1px solid rgba(255,255,255,0.03);
+}
+body.light .site-header{ background: rgba(255,255,255,0.7); border-bottom: 1px solid rgba(0,0,0,0.06) }
+
+.nav-container{
+  max-width:1200px; margin:0 auto; padding:0.9rem 1.25rem; display:flex; align-items:center; justify-content:space-between;
 }
 
-.nav-container {
-  max-width: 1200px;
-  margin: auto;
-  padding: 1rem 1.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+/* left & right groups keep layout neat */
+.left-group{display:flex; align-items:center; gap:.75rem}
+.logo{font-weight:700; letter-spacing:.6px; font-size:1.05rem}
+
+/* right group nav + buttons */
+.right-group{display:flex; gap:.5rem; align-items:center}
+
+/* nav links */
+.nav{display:flex; gap:1rem; align-items:center}
+.nav a{color:inherit; text-decoration:none; font-weight:500; padding:.35rem .25rem; border-radius:8px; transition:all var(--transition)}
+.nav a:hover{background: linear-gradient(90deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01)); text-decoration:none}
+@media (max-width: 768px){
+  .nav{position:fixed; right:0; top:64px; display:none; flex-direction:column; width:220px; padding:1rem; gap:.5rem; border-radius:12px; margin:0.5rem}
+  .nav.open{display:flex}
+  body.light .nav{background: rgba(255,255,255,0.95)}
+  .nav a{padding:.7rem .6rem}
 }
 
-.logo {
-  font-weight: 700;
+/* control buttons */
+.control-btn{
+  padding:.45rem .9rem; border-radius:999px; border:1px solid rgba(255,255,255,0.06); background:transparent; color:inherit; cursor:pointer; font-weight:600; transition:all var(--transition)
+}
+.control-btn:hover{
+  transform:translateY(-3px);
+  box-shadow: var(--accent-glow);
 }
 
-nav {
-  display: flex;
-  align-items: center;
+/* hacker icon (shows red when active) */
+.hacker-icon{
+  width:10px; height:10px; display:inline-block; border-radius:50%; background:#6a00ff; box-shadow: 0 0 10px rgba(106,0,255,0.2)
 }
+.hacker-toggle.active .hacker-icon{ background:#ff3b3b; box-shadow: 0 0 12px rgba(255,59,59,0.25) }
 
-nav a {
-  margin-left: 1.5rem;
-  cursor: pointer;
-  text-decoration: none;
-  color: inherit;
+/* hamburger for mobile */
+.hamburger{display:none; width:36px; height:36px; border-radius:8px; align-items:center; justify-content:center; cursor:pointer; background:transparent; border:1px solid rgba(255,255,255,0.03)}
+.hamburger span{display:block; width:18px; height:2px; background:currentColor; margin:3px 0; border-radius:2px}
+@media (max-width:768px){ .hamburger{display:flex} }
+
+/* =====================
+   HERO
+   ===================== */
+.hero{max-width:1100px; margin:2.8rem auto; padding:1.25rem; display:grid; grid-template-columns: 1fr 360px; gap:2rem; align-items:start}
+@media (max-width:900px){ .hero{ grid-template-columns: 1fr; } .profile-card{order:2} .hero-inner{order:1} }
+
+.hero-inner{padding:1rem}
+.typewriter{font-size:2.4rem; line-height:1.05; font-weight:700; margin-bottom:.5rem}
+.hero-sub{opacity:.9; margin-top:.8rem; max-width:64ch}
+.hero-actions{margin-top:1.4rem; display:flex; gap:.75rem; flex-wrap:wrap}
+
+/* buttons: glass + gradient hover */
+.btn{
+  padding:.8rem 1.4rem; border-radius:999px; cursor:pointer; border:1px solid rgba(255,255,255,0.06); background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); backdrop-filter: blur(6px);
+  transition: transform var(--transition), box-shadow var(--transition), background var(--transition);
+  color:inherit; font-weight:600;
 }
-
-.theme-toggle {
-  margin-left: 1.5rem;
-  padding: 0.4rem 1rem;
-  border-radius: var(--pill);
-  border: 1px solid rgba(255,255,255,0.15);
-}
-
-/* HAMBURGER */
-.hamburger {
-  display: none;
-  flex-direction: column;
-  gap: 5px;
-  cursor: pointer;
-}
-
-.hamburger span {
-  width: 24px;
-  height: 2px;
-  background: currentColor;
-}
-
-/* HERO */
-.hero {
-  max-width: 900px;
-  margin: auto;
-  padding: 5rem 1.5rem;
-  text-align: center;
-}
-
-.hero h1 {
-  font-size: 2.8rem;
-}
-
-.hero h1 span {
-  background: var(--accent-gradient);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.hero-sub {
-  margin-top: 1.2rem;
-  opacity: 0.9;
-}
-
-.hero-actions {
-  margin-top: 2rem;
-}
-
-.btn {
-  display: inline-block;
-  padding: 0.8rem 1.6rem;
-  margin: 0.5rem;
-  border-radius: var(--pill);
-  border: 1px solid rgba(255,255,255,0.15);
-  cursor: pointer;
-}
-
-.btn:hover {
+.btn:hover{
   background: var(--accent-gradient);
   box-shadow: var(--accent-glow);
-  color: #fff;
+  color:#fff;
+  transform: translateY(-6px);
 }
 
-/* SECTIONS */
-section {
-  max-width: 900px;
-  margin: auto;
-  padding: 4rem 1.5rem;
+/* profile card (glass-like) */
+.profile-card{ padding:1.25rem; border-radius:16px; background: rgba(255,255,255,0.02); border:1px solid rgba(255,255,255,0.04); backdrop-filter: blur(8px) }
+body.light .profile-card{ background: rgba(0,0,0,0.03); color:var(--text-dark) }
+
+/* =====================
+   Bento Grid (clocks)
+   ===================== */
+.bento{max-width:1100px; margin:1.25rem auto; padding:1rem}
+.bento-grid{display:grid; grid-template-columns: repeat(3, 1fr); gap:1rem}
+.bento-card{padding:1rem; border-radius:12px; background: linear-gradient(180deg, rgba(255,255,255,0.015), rgba(255,255,255,0.01)); border:1px solid rgba(255,255,255,0.03); text-align:center; min-height:110px}
+.bento-title{font-weight:600; margin-bottom:.5rem}
+.clock{font-size:1.6rem; font-weight:700; margin:0.25rem 0}
+.tz{opacity:.75; font-size:.85rem}
+@media (max-width:900px){ .bento-grid{ grid-template-columns: 1fr; } }
+
+/* =====================
+   sections & footer
+   ===================== */
+section{ max-width:1100px; margin:1.25rem auto; padding: 1rem; }
+.about p, .contact p{ line-height:1.6; opacity:.95 }
+.mail-link{ text-decoration:underline; color:inherit }
+
+/* footer */
+.site-footer{ text-align:center; padding:2rem 1rem; opacity:.9 }
+
+/* =====================
+   Custom Cursor
+   ===================== */
+#custom-cursor{ position:fixed; left:0; top:0; pointer-events:none; z-index:9999; transform:translate(-50%,-50%); transition: transform 90ms linear }
+#custom-cursor .cursor-core{ width:36px; height:36px; border-radius:50%; display:flex; align-items:center; justify-content:center;
+  background: conic-gradient(from 180deg at 50% 50%, #ff4ecd, #6a00ff);
+  box-shadow: 0 6px 28px rgba(106,0,255,0.18);
+  transform: translateZ(0); filter: saturate(1.1);
+  transition: transform 180ms cubic-bezier(.2,.9,.2,1), width var(--transition), height var(--transition), box-shadow var(--transition);
+  border: 2px solid rgba(255,255,255,0.12)
 }
 
-section h2 {
-  margin-bottom: 1.5rem;
+/* small dot inside */
+#custom-cursor .cursor-core::after{
+  content:''; width:8px; height:8px; border-radius:50%; background:rgba(0,0,0,0.4); display:block;
+  transform: translateY(-1px);
 }
 
-.about p,
-.contact p {
-  line-height: 1.7;
-  opacity: 0.9;
+/* when magnetic */
+#custom-cursor.sucked{ width:48px; height:48px }
+#custom-cursor.sucked .cursor-core{ transform:scale(.9); box-shadow: 0 14px 40px rgba(106,0,255,0.22) }
+
+/* hide on touch devices */
+@media (pointer:coarse), (hover:none){
+  #custom-cursor{ display:none }
 }
 
-.contact a {
-  color: inherit;
-  text-decoration: underline;
+/* =====================
+   Hacker mode (terminal)
+   ===================== */
+body.hacker{
+  background: #000000;
+  color: #00ff6a; /* green-ish */
+  transition: none;
 }
+body.hacker .site-header{ background: rgba(0,0,0,0.95); border-bottom: 1px solid rgba(0,0,0,0.5) }
+body.hacker .nav a{ color: #00ff6a }
+body.hacker .profile-card, body.hacker .bento-card, body.hacker .btn{ background: transparent; border-color: rgba(0,255,106,0.08) }
+body.hacker .typewriter, body.hacker .hero-sub, body.hacker .about, body.hacker .clock{ color: #00ff6a }
 
-/* FOOTER */
-footer {
-  text-align: center;
-  padding: 2rem 1rem;
-  opacity: 0.8;
-}
+/* terminal styling for hacker icon already toggles in .hacker-toggle.active */
 
-/* MOBILE */
-@media (max-width: 768px) {
-  .hamburger {
-    display: flex;
-  }
-
-  nav {
-    position: absolute;
-    top: 64px;
-    right: 0;
-    background: var(--card-dark);
-    flex-direction: column;
-    width: 100%;
-    display: none;
-  }
-
-  body.light nav {
-    background: var(--card-light);
-  }
-
-  nav a,
-  .theme-toggle {
-    margin: 1rem;
-  }
-
-  nav.open {
-    display: flex;
-  }
-}
