@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="color-scheme" content="dark light" />
+  <title>Shourya Varshney — Portfolio</title>
+  <meta name="description" content="Modern personal portfolio for Shourya Varshney." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="ambient ambient-a"></div>
+  <div class="ambient ambient-b"></div>
+
+  <header class="topbar glass">
+    <a class="brand" href="#home" aria-label="Go to top">
+      <span class="brand-mark">SV</span>
+      <span class="brand-text">
+        <strong>Shourya Varshney</strong>
+        <small>Portfolio</small>
+      </span>
+    </a>
+
+    <div class="topbar-actions">
+      <button class="icon-button" id="themeToggle" type="button" aria-label="Toggle theme" aria-pressed="false">
+        <span class="icon-light">☼</span>
+        <span class="icon-dark">◐</span>
+      </button>
+      <button class="icon-button menu-toggle" id="menuToggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="siteMenu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+
+    <nav class="menu-panel glass" id="siteMenu" aria-label="Primary">
+      <a href="#about">About</a>
+      <a href="#mission">Mission</a>
+      <a href="#setup">Setup</a>
+      <a href="#interests">Interests</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main id="home">
+    <section class="hero section-shell">
+      <div class="hero-copy reveal">
+        <p class="eyebrow">Modern personal portfolio</p>
+        <h1>Shourya Varshney</h1>
+        <p class="lede">
+          B.Com student, future MBA aspirant, chess enthusiast, and computer hobbyist.
+          I like clean systems, strong ideas, and interfaces that do not waste attention.
+        </p>
+        <div class="hero-actions">
+          <a class="button primary" href="mailto:official.shourya.varshney@gmail.com">Email Me</a>
+          <a class="button secondary" href="#setup">See my setup</a>
+        </div>
+      </div>
+
+      <div class="hero-grid">
+        <article class="info-card glass reveal delay-1">
+          <p class="card-label">Current status</p>
+          <h2>Building the next chapter</h2>
+          <p>Currently pursuing B.Com and preparing for a future MBA path.</p>
+        </article>
+
+        <article class="info-card glass reveal delay-2">
+          <p class="card-label">What I like</p>
+          <h2>Chess, Linux, computers</h2>
+          <p>Sharp thinking, custom setups, and the quiet satisfaction of making systems work well.</p>
+        </article>
+
+        <article class="info-card glass reveal delay-3">
+          <p class="card-label">Style</p>
+          <h2>Modern, calm, efficient</h2>
+          <p>Designed to stay clean on phone and laptop, with enough motion to feel alive without becoming noisy.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="content-grid section-shell" id="about">
+      <article class="panel glass reveal">
+        <p class="card-label">About me</p>
+        <h2>Focused, curious, and practical</h2>
+        <p>
+          I enjoy computers, technology, Linux customization, and learning how things work under the hood.
+          I prefer useful design over decoration for its own sake.
+        </p>
+      </article>
+
+      <article class="panel glass reveal delay-1" id="mission">
+        <p class="card-label">Mission</p>
+        <h2>Move toward an MBA</h2>
+        <p>
+          My long-term direction is simple: keep improving, stay disciplined, and build toward an MBA in the future.
+        </p>
+      </article>
+
+      <article class="panel glass reveal delay-2" id="setup">
+        <p class="card-label">Current setup</p>
+        <h2>Intel i3-1005G1 • 8GB RAM • 1TB HDD • CachyOS KDE</h2>
+        <p>
+          Yes, the HDD is still here. It is working hard. One day it will finally be allowed to retire gracefully
+          and be replaced by an SSD, which is a deeply overdue negotiation.
+        </p>
+      </article>
+    </section>
+
+    <section class="wide-section section-shell" id="interests">
+      <div class="section-heading reveal">
+        <p class="card-label">Interests</p>
+        <h2>What keeps my attention</h2>
+      </div>
+
+      <div class="interest-list">
+        <article class="interest-item glass reveal">
+          <h3>Chess</h3>
+          <p>I like the structure, patience, calculation, and the punishment for careless moves.</p>
+        </article>
+        <article class="interest-item glass reveal delay-1">
+          <h3>Computers</h3>
+          <p>Hardware, software, performance tuning, and understanding why systems behave the way they do.</p>
+        </article>
+        <article class="interest-item glass reveal delay-2">
+          <h3>CachyOS</h3>
+          <p>A fast-moving Linux setup that fits the kind of experimentation and optimization I enjoy.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="quote-shell section-shell reveal">
+      <blockquote class="glass quote-card">
+        “Information is power. But like all power, there are those who want to keep it for themselves.”
+        <footer>— Aaron Swartz</footer>
+      </blockquote>
+    </section>
+  </main>
+
+  <footer class="footer section-shell" id="contact">
+    <div class="footer-inner glass">
+      <p>© 2026 Shourya Varshney</p>
+      <p>Built as a lightweight static portfolio for GitHub Pages.</p>
+      <p class="muted">Trademark and credits remain with their respective owners.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
