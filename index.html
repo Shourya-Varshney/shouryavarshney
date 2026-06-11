@@ -166,8 +166,12 @@
         }
 
         /* --- Futuristic Text Glow --- */
-        .text-glow {
+        .dark .text-glow {
             animation: pulse-glow 3s infinite alternate;
+        }
+        /* Disable the pulse animation on hover so chromatic-text shadow works properly */
+        .text-glow:hover {
+            animation: none !important;
         }
         
         @keyframes pulse-glow {
@@ -210,7 +214,8 @@
 
     <nav id="navbar" class="fixed w-full z-50 top-0 glass-panel !border-x-0 !border-t-0 transition-all duration-500">
         <div id="nav-inner" class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center relative overflow-hidden transition-all duration-500">
-            <div class="absolute -top-10 -left-10 w-20 h-20 bg-brand-purple/20 rounded-full blur-xl animate-blob"></div>
+            <!-- Hidden in light mode to prevent black smudging -->
+            <div class="absolute -top-10 -left-10 w-20 h-20 bg-brand-purple/20 rounded-full blur-xl animate-blob hidden dark:block"></div>
             
             <a href="#" class="font-display font-bold text-xl tracking-wider chromatic-text z-10 relative text-gray-900 dark:text-white">
                 SV<span class="text-brand-purple">.</span>
