@@ -5,11 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shourya Varshney | Futuristic Portfolio</title>
     
-    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Phosphor Icons -->
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
-    <!-- Google Fonts: Space Grotesk for futuristic headers, Inter for readability -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
 
     <script>
@@ -205,18 +202,14 @@
             box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.1);
         }
     </style>
-    <!-- Formspree script -->
     <script src="https://unpkg.com/@formspree/ajax@1" defer></script>
 </head>
 <body class="antialiased selection:bg-brand-purple selection:text-white">
 
-    <!-- Interactive Background -->
     <canvas id="bg-canvas"></canvas>
 
-    <!-- Floating Glass Navigation -->
-    <nav id="navbar" class="fixed w-full z-50 top-4 px-4 transition-all duration-500">
-        <div class="max-w-5xl mx-auto glass-panel rounded-full px-6 py-3 flex justify-between items-center relative overflow-hidden">
-            <!-- Fluid highlight inside nav -->
+    <nav id="navbar" class="fixed w-full z-50 top-0 glass-panel !border-x-0 !border-t-0 transition-all duration-500">
+        <div id="nav-inner" class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center relative overflow-hidden transition-all duration-500">
             <div class="absolute -top-10 -left-10 w-20 h-20 bg-brand-purple/20 rounded-full blur-xl animate-blob"></div>
             
             <a href="#" class="font-display font-bold text-xl tracking-wider chromatic-text z-10 relative text-gray-900 dark:text-white">
@@ -224,21 +217,18 @@
             </a>
             
             <div class="flex items-center gap-4 z-10">
-                <!-- Theme Toggle -->
-                <button id="theme-toggle" class="w-10 h-10 rounded-full flex items-center justify-center bg-gray-800 dark:bg-white/10 hover:bg-gray-700 dark:hover:bg-white/20 transition-colors hover-target text-white">
+                <button id="theme-toggle" class="w-10 h-10 rounded-full flex items-center justify-center bg-gray-200 dark:bg-white/10 hover:bg-gray-300 dark:hover:bg-white/20 transition-colors hover-target text-gray-900 dark:text-white">
                     <i class="ph ph-moon text-xl hidden dark:block"></i>
                     <i class="ph ph-sun text-xl block dark:hidden"></i>
                 </button>
                 
-                <!-- Hamburger Menu Button -->
-                <button id="menu-btn" class="w-10 h-10 rounded-full flex items-center justify-center bg-brand-purple/20 text-brand-purple hover:bg-brand-purple/40 transition-colors hover-target">
+                <button id="menu-btn" class="w-10 h-10 rounded-full flex items-center justify-center bg-brand-purple/10 dark:bg-brand-purple/20 text-brand-purple hover:bg-brand-purple/20 dark:hover:bg-brand-purple/40 transition-colors hover-target">
                     <i class="ph ph-list text-xl"></i>
                 </button>
             </div>
         </div>
     </nav>
 
-    <!-- Fullscreen Mobile Menu Overlay -->
     <div id="mobile-menu" class="fixed inset-0 z-40 bg-black/80 dark:bg-black/90 backdrop-blur-2xl transform translate-x-full transition-transform duration-500 flex flex-col items-center justify-center">
         <button id="close-menu" class="absolute top-8 right-8 text-white text-3xl hover:text-brand-red transition-colors hover-target">
             <i class="ph ph-x"></i>
@@ -251,14 +241,12 @@
         </div>
     </div>
 
-    <!-- Hero Section -->
     <header id="hero" class="min-h-screen flex items-center justify-center relative px-6 overflow-hidden">
-        <!-- Liquid Gradient Blobs -->
         <div class="liquid-bg w-[80vw] h-[80vw] md:w-[40vw] md:h-[40vw] bg-gradient-to-br from-brand-purple/40 to-brand-red/0 rounded-full animate-blob top-1/4 left-1/4 mix-blend-multiply dark:mix-blend-screen" style="mask-image: radial-gradient(circle, black 40%, transparent 70%); -webkit-mask-image: radial-gradient(circle, black 40%, transparent 70%);"></div>
         <div class="liquid-bg w-[70vw] h-[70vw] md:w-[35vw] md:h-[35vw] bg-gradient-to-tl from-blue-500/30 to-brand-purple/0 rounded-full animate-blob animation-delay-2000 bottom-1/4 right-1/4 mix-blend-multiply dark:mix-blend-screen" style="mask-image: radial-gradient(circle, black 40%, transparent 70%); -webkit-mask-image: radial-gradient(circle, black 40%, transparent 70%);"></div>
 
         <div class="max-w-4xl text-center z-10 reveal">
-            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-panel text-sm font-medium mb-8">
+            <div class="inline-flex items-center gap-2 px-4 py-2 mt-16 rounded-full glass-panel text-sm font-medium mb-8">
                 <span class="relative flex h-3 w-3">
                   <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-red opacity-75"></span>
                   <span class="relative inline-flex rounded-full h-3 w-3 bg-brand-red"></span>
@@ -287,14 +275,11 @@
         </div>
     </header>
 
-    <!-- Unified Persona & Timeline Section (Reference Design) -->
     <section id="about" class="py-24 px-6 relative z-10">
         
-        <!-- Central Profile Card -->
         <div class="relative group max-w-4xl mx-auto reveal">
             <div class="glow-backdrop"></div>
             <div class="rython-card p-8 md:p-12">
-                <!-- Header -->
                 <div class="flex flex-col md:flex-row items-center md:items-start gap-6 mb-8 text-center md:text-left">
                     <div class="w-24 h-24 rounded-full bg-gradient-to-br from-brand-purple to-brand-red p-1 shrink-0">
                         <div class="w-full h-full bg-white dark:bg-brand-card rounded-full flex items-center justify-center text-3xl font-display font-bold text-gray-900 dark:text-white">
@@ -307,13 +292,11 @@
                     </div>
                 </div>
                 
-                <!-- Bio -->
                 <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">Current Directive</h3>
                 <p class="text-gray-600 dark:text-gray-300 leading-relaxed mb-8">
                     Currently navigating the realms of commerce by pursuing my <strong>B.Com</strong>, while laying the strategic groundwork for a future <strong>MBA</strong>. I believe in decoding complex systems—whether they are financial markets, business structures, or intricate computer algorithms.
                 </p>
 
-                <!-- Social/Icon Row -->
                 <div class="flex gap-4 justify-center md:justify-start">
                     <a href="mailto:official.shourya.varshney@gmail.com" class="w-10 h-10 rounded-full bg-gray-100 dark:bg-white/10 flex items-center justify-center text-gray-900 dark:text-white hover:bg-brand-purple hover:text-white transition-colors">
                         <i class="ph-fill ph-envelope-simple text-xl"></i>
@@ -325,16 +308,13 @@
             </div>
         </div>
 
-        <!-- Timelines: Interests & Hardware -->
         <div class="max-w-4xl mx-auto mt-16 grid grid-cols-1 md:grid-cols-2 gap-16 reveal delay-100">
             
-            <!-- Column 1: Interests -->
             <div>
                 <h3 class="text-xl font-display font-bold mb-8 text-gray-900 dark:text-white border-b border-gray-200 dark:border-white/10 pb-4">
                     Interests & Pursuits
                 </h3>
                 <div class="space-y-10 border-l border-gray-300 dark:border-white/10 pl-8 ml-3 relative">
-                    <!-- Item 1 -->
                     <div class="relative group/item">
                         <div class="absolute w-3 h-3 bg-brand-purple rounded-full -left-[2.35rem] top-1.5 shadow-[0_0_12px_rgba(124,58,237,0.8)] group-hover/item:scale-150 transition-transform"></div>
                         <h4 class="text-lg font-bold text-gray-900 dark:text-white mb-1">Strategic Mindset & Future MBA</h4>
@@ -342,7 +322,6 @@
                             Fascinated by the intersection of business principles and real-world scenarios. I love analyzing structures—from anticipating moves as a chess enthusiast to decoding financial markets—which drives my aspiration to pursue an MBA.
                         </p>
                     </div>
-                    <!-- Item 2 -->
                     <div class="relative group/item">
                         <div class="absolute w-3 h-3 bg-brand-red rounded-full -left-[2.35rem] top-1.5 shadow-[0_0_12px_rgba(225,29,72,0.8)] group-hover/item:scale-150 transition-transform"></div>
                         <h4 class="text-lg font-bold text-gray-900 dark:text-white mb-1">Bleeding-Edge Tech Explorer</h4>
@@ -353,13 +332,11 @@
                 </div>
             </div>
 
-            <!-- Column 2: Hardware & Environment -->
             <div>
                 <h3 class="text-xl font-display font-bold mb-8 text-gray-900 dark:text-white border-b border-gray-200 dark:border-white/10 pb-4">
                     Hardware & Environment
                 </h3>
                 <div class="space-y-10 border-l border-gray-300 dark:border-white/10 pl-8 ml-3 relative">
-                    <!-- Item 1 -->
                     <div class="relative group/item">
                         <div class="absolute w-3 h-3 bg-brand-purple rounded-full -left-[2.35rem] top-1.5 shadow-[0_0_12px_rgba(124,58,237,0.8)] group-hover/item:scale-150 transition-transform"></div>
                         <h4 class="text-lg font-bold text-gray-900 dark:text-white mb-1">Edge Computing & Hardware</h4>
@@ -367,7 +344,6 @@
                             Passionate about edge clusters, single-board computers, and unconventional setups. My hardware interests span from Raspberry Pi, Turing Pi, and ZimaBoard, to hyper-niche tech like DGX Sparx, CharaChorder, and even photobioreactors.
                         </p>
                     </div>
-                    <!-- Item 2 -->
                     <div class="relative group/item">
                         <div class="absolute w-3 h-3 bg-brand-red rounded-full -left-[2.35rem] top-1.5 shadow-[0_0_12px_rgba(225,29,72,0.8)] group-hover/item:scale-150 transition-transform"></div>
                         <h4 class="text-lg font-bold text-gray-900 dark:text-white mb-1">Dual Boot Configuration</h4>
@@ -376,7 +352,6 @@
                             <strong>Tiny10:</strong> Secondary (Held hostage by MS Excel)
                         </p>
                     </div>
-                    <!-- Item 3 -->
                     <div class="relative group/item">
                         <div class="absolute w-3 h-3 bg-brand-purple rounded-full -left-[2.35rem] top-1.5 shadow-[0_0_12px_rgba(124,58,237,0.8)] group-hover/item:scale-150 transition-transform"></div>
                         <h4 class="text-lg font-bold text-gray-900 dark:text-white mb-1">System Specifications</h4>
@@ -391,27 +366,25 @@
             </div>
         </div>
 
-        <!-- The HDD Joke Alert Box -->
         <div class="max-w-4xl mx-auto mt-12 reveal delay-200">
             <div class="relative group">
                 <div class="glow-backdrop bg-gradient-to-r from-brand-red to-orange-500 opacity-0 group-hover:opacity-20 transition-opacity"></div>
                 <div class="rython-card p-6 border-l-4 border-l-brand-red overflow-hidden relative">
                     <i class="ph-fill ph-warning text-brand-red text-6xl absolute -right-4 -bottom-4 opacity-10"></i>
                     <p class="text-gray-700 dark:text-gray-300 italic text-sm md:text-base leading-relaxed relative z-10">
-                        "Yes, you read that specs list correctly. I am surviving on a <strong class="text-brand-red">1TB mechanical hard drive</strong> in the year 2026. Every time I boot up my laptop, the OS takes a 5-minute spiritual journey just to evaluate the meaning of life before showing me the desktop."
+                        &ldquo;Yes, you read that specs list correctly. I am surviving on a <strong class="text-brand-red">1TB mechanical hard drive</strong> in the year 2026. Every time I boot up my laptop, the OS takes a 5-minute spiritual journey just to evaluate the meaning of life before showing me the desktop.&rdquo;
                     </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Quote Section -->
     <section id="quote" class="py-32 px-6 relative z-10 flex justify-center text-center">
         <div class="max-w-4xl reveal">
             <div class="relative">
                 <i class="ph-fill ph-quotes text-6xl text-brand-purple/20 absolute -top-8 -left-8 md:-left-16 rotate-180"></i>
                 <blockquote class="text-3xl md:text-5xl font-display font-bold text-gray-900 dark:text-white leading-tight mb-8 relative z-10">
-                    "Information is power. But like all power, there are those who want to keep it for themselves."
+                    &ldquo;Information is power. But like all power, there are those who want to keep it for themselves.&rdquo;
                 </blockquote>
             </div>
             <p class="text-xl font-mono text-gray-500 tracking-widest chromatic-text cursor-default">
@@ -420,7 +393,6 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
     <section id="contact" class="py-24 px-6 relative z-10">
         <div class="max-w-3xl mx-auto">
             <div class="text-center mb-16 reveal">
@@ -467,8 +439,7 @@
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="border-t border-gray-200 dark:border-white/10 py-12 relative z-10 glass-panel">
+    <footer class="border-t border-gray-200 dark:border-white/10 py-12 relative z-10 glass-panel !border-x-0 !border-b-0">
         <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
             <div class="text-center md:text-left">
                 <h3 class="font-display font-bold text-xl text-gray-900 dark:text-white chromatic-text">Shourya Varshney</h3>
@@ -480,7 +451,6 @@
         </div>
     </footer>
 
-    <!-- Core Scripts -->
     <script>
         // 1. Dark/Light Theme Toggle
         const themeToggleBtn = document.getElementById('theme-toggle');
@@ -619,11 +589,11 @@
 
         // 5. Navbar Blur on scroll
         window.addEventListener('scroll', () => {
-            const nav = document.getElementById('navbar');
+            const navInner = document.getElementById('nav-inner');
             if (window.scrollY > 50) {
-                nav.style.paddingTop = '0.5rem';
+                navInner.classList.replace('py-4', 'py-2');
             } else {
-                nav.style.paddingTop = '1rem';
+                navInner.classList.replace('py-2', 'py-4');
             }
         });
 
